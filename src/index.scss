@@ -1,5 +1,6 @@
 :root {
   --font-family: Inter, system-ui;
+  --background-home: linear-gradient(to right, #9292e6, #7099e6, #77e9e1);
 
   --background-color: #ffffff;
   --main-text-color: #101828;
@@ -9,8 +10,8 @@
   --yellow-collor: #ffc531;
   --bg-segmented-color: #f2f4f7;
   --bg-input-color: #f7f7f7;
+  --transition: 0.5s;
 
-  color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,10 +21,15 @@
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background: var(--background-home);
+
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 ul {
@@ -53,4 +59,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }

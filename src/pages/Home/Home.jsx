@@ -1,5 +1,22 @@
+import { NavLink } from 'react-router-dom';
+import ImgCamper from '../../assets/campers.webp';
+import scss from './Home.module.scss';
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <h1 className={scss.homeTitle}>Welcome to the campers shop</h1>
+      <h2 className={scss.homeSubtitle}>
+        Book the camper from the{' '}
+        <NavLink to="/catalog" className={scss.homeLink}>
+          Catalog
+        </NavLink>
+      </h2>
+      <div className={scss.wrapperImg}>
+        <img className={scss.img} src={ImgCamper} alt="image camper" />
+      </div>
+    </div>
+  );
 };
 
 export default Home;

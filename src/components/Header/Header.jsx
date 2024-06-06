@@ -10,12 +10,15 @@ export const Header = () => {
   };
   return (
     <header className={scss.header}>
-      <Link className={scss.wrapperLogo} to="/">
-        <svg className={scss.logo}>
-          <use href={`${sprite}#icon-camper`}></use>
-        </svg>
-        <p className={scss.textLogo}>Camper Rental</p>
-      </Link>
+      <div className={scss.containerLogo}>
+        <Link className={scss.wrapperLogo} to="/">
+          <svg className={scss.logo}>
+            <use href={`${sprite}#icon-camper`}></use>
+          </svg>
+          <p className={scss.textLogo}>Camper Rental</p>
+        </Link>
+      </div>
+
       <nav className={scss.navWrap}>
         <NavLink to="/" className={navLink}>
           Home

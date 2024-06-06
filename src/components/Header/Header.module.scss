@@ -14,6 +14,10 @@
     gap: 10px;
   }
 }
+.containerLogo {
+  position: relative;
+}
+
 .wrapperLogo {
   display: flex;
   align-items: center;
@@ -21,7 +25,23 @@
   transition: fill var(--transition);
 
   &:hover {
-    fill: aqua;
+    fill: var(--aqua-color);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background: var(--aqua-color);
+    border-radius: 5px;
+    transform: scale(0);
+    transition: all 0.6s ease;
+  }
+
+  &:hover::before {
+    transform: scale(1);
   }
 }
 
@@ -69,11 +89,11 @@
   position: relative;
 
   &:hover {
-    color: aqua;
+    color: var(--aqua-color);
   }
 
   &.active {
-    color: aqua;
+    color: var(--aqua-color);
   }
 
   &.active::before {
@@ -83,7 +103,7 @@
     bottom: -10px;
     width: 100%;
     height: 3px;
-    background-color: aqua;
+    background-color: var(--aqua-color);
     border-radius: 5px;
   }
 }

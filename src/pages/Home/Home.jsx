@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import ImgCamper from '../../assets/campers.webp';
+import { Footer } from '../../components/Footer/Footer';
 import scss from './Home.module.scss';
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
       </h2>
       <div className={scss.wrapperImg}>
         <img className={scss.img} src={ImgCamper} alt="image camper" />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

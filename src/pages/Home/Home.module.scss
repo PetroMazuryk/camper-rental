@@ -1,6 +1,6 @@
 .homeTitle {
   text-align: center;
-  font-size: 46px;
+  font-size: 40px;
   font-weight: bold;
   font-family: var(--font-family);
   text-transform: uppercase;
@@ -9,13 +9,13 @@
   margin-top: 20px;
 
   @media screen and (max-width: 530px) {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
 .homeSubtitle {
   text-align: center;
-  font-size: 46px;
+  font-size: 40px;
   font-weight: bold;
   font-family: var(--font-family);
   text-transform: uppercase;
@@ -25,13 +25,13 @@
   margin-bottom: 20px;
 
   @media screen and (max-width: 530px) {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
 .homeLink {
   text-align: center;
-  font-size: 46px;
+  font-size: 40px;
   font-weight: bold;
   font-family: var(--font-family);
   text-transform: uppercase;
@@ -42,7 +42,7 @@
   text-decoration-color: rgb(96, 96, 170);
 
   @media screen and (max-width: 530px) {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 

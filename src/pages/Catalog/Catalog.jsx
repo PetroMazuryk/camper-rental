@@ -1,4 +1,5 @@
 import { CamperCard } from '../../components/CamperCard/CamperCard';
+
 const Catalog = () => {
   return (
     <div>

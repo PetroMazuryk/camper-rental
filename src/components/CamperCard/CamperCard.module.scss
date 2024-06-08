@@ -1,3 +1,113 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--main-text-color);
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  min-height: 358px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  width: 290px;
+  height: 310px;
+}
+
+.image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.infoWrapper {
+  width: 526px;
+  min-height: 310px;
+}
+
+.headingInner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.buttonFavourite {
+  padding-top: 5px;
+  display: flex;
+  background-color: transparent;
+}
+
+.iconLocation,
+.iconFavourite {
+  fill: transparent;
+  stroke: var(--main-text-color);
+  transition: var(--transition);
+}
+
+.iconFavourite:hover,
+.iconFavourite:focus {
+  fill: var(--bg-main-color);
+  stroke: var(--bg-main-color);
+}
+
+.iconRating {
+  fill: var(--yellow-collor);
+}
+
+.priceInner {
+  display: flex;
+  gap: 10px;
+}
+
+.boxInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.subjectInner {
+  display: flex;
+  gap: 16px;
+}
+
+.holder {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subject {
+  line-height: 150%;
+}
+
+.reviews {
+  text-decoration: underline;
+}
+
+.desc {
+  line-height: 150%;
+  color: var(--second-text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list {
+  height: 96px;
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  // overflow: hidden;
+}
+
 .button {
   width: 166px;
   height: 56px;
@@ -14,4 +124,9 @@
 .button:hover,
 .button:focus {
   background-color: var(--btn-hover-color);
+}
+
+.active {
+  fill: var(--button-hover);
+  stroke: var(--button-hover);
 }

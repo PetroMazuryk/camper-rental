@@ -66,7 +66,9 @@ export const CamperCard = () => {
                           <use href={`${icon}#icon-rating`}></use>
                         </svg>
                         <div className={`${scss.subject} ${scss.reviews}`}>
-                          <p>{`${rating}(${reviews.length} Reviews)`}</p>
+                          <p>{`${rating}(${
+                            Array.isArray(reviews) ? reviews.length : '0'
+                          } Reviews)`}</p>
                         </div>
                       </div>
 

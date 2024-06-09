@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Modal } from '../Modal/Modal';
@@ -12,10 +13,11 @@ import scss from './CamperCard.module.scss';
 
 export const CamperCard = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
+
   const dispatch = useDispatch();
 
   const campers = useSelector(selectCampersData);
-  console.log(campers);
+
   useEffect(() => {
     dispatch(fetchCampersAsync());
   }, [dispatch]);
@@ -23,17 +25,21 @@ export const CamperCard = () => {
   return (
     <>
       {campers.length > 0 && (
-        <ul className={scss.list}>
+        <ul className={scss.listWrapper}>
           {campers.map(
             ({
               _id,
               name,
-              // location,
-              price,
               gallery,
+              price,
+              rating,
+              reviews,
+              location,
               description,
-              // rating,
-              // reviews,
+              adults,
+              transmission,
+              engine,
+              details,
             }) => {
               return (
                 <li className={scss.item} key={_id}>
@@ -50,7 +56,7 @@ export const CamperCard = () => {
                         </p>
                         <button className={scss.buttonFavourite}>
                           <svg className={scss.active} width="21" height="19">
-                            <use href={`${icon}#icon-favourite`}></use>
+                            <use href={`${icon}#icon-heart`}></use>
                           </svg>
                         </button>
                       </div>
@@ -66,9 +72,9 @@ export const CamperCard = () => {
                           >
                             <use href={`${icon}#icon-rating`}></use>
                           </svg>
-                          <p className={`${scss.subject} ${scss.reviews}`}>
-                            <div>Reviews info</div>
-                          </p>
+                          <div className={`${scss.subject} ${scss.reviews}`}>
+                            <p>{`${rating}(${reviews.length} Reviews)`}</p>
+                          </div>
                         </div>
 
                         <div className={scss.holder}>
@@ -79,15 +85,51 @@ export const CamperCard = () => {
                           >
                             <use href={`${icon}#icon-location`}></use>
                           </svg>
-                          <p className={scss.subject}>
-                            <div>Location</div>
-                          </p>
+                          <div className={scss.subject}>
+                            <p>{location}</p>
+                          </div>
                         </div>
                       </div>
 
                       <p className={scss.desc}>{description}</p>
-                      <ul className={scss.list}>
-                        <div>FeaturesCategories</div>
+
+                      <ul className={scss.categoryList}>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.icon}>
+                            <use href={`${icon}#icon-adults`}></use>
+                          </svg>
+                          {`${adults} adults`}
+                        </li>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.transIcon}>
+                            <use href={`${icon}#icon-automatic`}></use>
+                          </svg>
+                          <p className={scss.text}>{transmission}</p>
+                        </li>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.icon}>
+                            <use href={`${icon}#icon-petrol`}></use>
+                          </svg>
+                          <p className={scss.text}>{engine}</p>
+                        </li>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.transIcon}>
+                            <use href={`${icon}#icon-kitchen`}></use>
+                          </svg>
+                          <p className={scss.text}>kitchen</p>
+                        </li>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.transIcon}>
+                            <use href={`${icon}#icon-beds`}></use>
+                          </svg>
+                          {`${details.beds} beds`}
+                        </li>
+                        <li className={scss.categoryItem}>
+                          <svg className={scss.icon}>
+                            <use href={`${icon}#icon-ac`}></use>
+                          </svg>
+                          <p className={scss.text}>AC</p>
+                        </li>
                       </ul>
                       <button
                         className={scss.button}
@@ -108,6 +150,7 @@ export const CamperCard = () => {
           )}
         </ul>
       )}
+      <button className={scss.loadBtn}>Load more</button>
     </>
   );
 };

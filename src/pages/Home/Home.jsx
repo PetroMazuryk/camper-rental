@@ -5,7 +5,7 @@ import scss from './Home.module.scss';
 
 const Home = () => {
   return (
-    <div>
+    <div className={scss.homeWrapper}>
       <h1 className={scss.homeTitle}>Welcome to the campers shop</h1>
       <h2 className={scss.homeSubtitle}>
         Book the camper from the{' '}

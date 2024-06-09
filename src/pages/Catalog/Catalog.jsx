@@ -1,9 +1,9 @@
 import { CamperCard } from '../../components/CamperCard/CamperCard';
 
+import scss from './Catalog.module.scss';
 const Catalog = () => {
   return (
-    <div>
-      Catalog
+    <div className={scss.catalogWrapper}>
       <CamperCard />
     </div>
   );

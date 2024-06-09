@@ -1,9 +1,15 @@
+.listWrapper {
+  padding-top: 10px;
+}
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--main-text-color);
   border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
   padding: 24px;
   width: 888px;
   min-height: 358px;
@@ -70,7 +76,7 @@
 .boxInner {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .subjectInner {
@@ -100,12 +106,42 @@
   text-overflow: ellipsis;
 }
 
-.list {
-  height: 96px;
-  gap: 32px;
+// category
+.categoryList {
   display: flex;
   flex-wrap: wrap;
-  // overflow: hidden;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  line-height: 1.25;
+  background-color: var(--bg-segmented-color);
+  border-radius: 100px;
+  padding: 12px 16px;
+}
+
+.icon {
+  fill: var(--main-text-color);
+  stroke: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+.transIcon {
+  fill: transparent;
+  stroke: var(--main-text-color);
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  text-transform: capitalize;
 }
 
 .button {
@@ -119,14 +155,34 @@
   color: var(--background-color);
   background-color: var(--bg-main-color);
   transition: var(--transition);
-}
 
-.button:hover,
-.button:focus {
-  background-color: var(--btn-hover-color);
+  &:hover,
+  &:focus {
+    background-color: var(--btn-hover-color);
+  }
 }
 
 .active {
   fill: var(--button-hover);
   stroke: var(--button-hover);
+}
+
+// loadBtn
+.loadBtn {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  border-radius: 200px;
+  padding: 16px 32px;
+
+  color: var(--main-text-color);
+  background-color: --bg-segmented-color;
+  border: 1px solid #47546733;
+
+  &:hover {
+    border: 1px solid #e44848;
+    cursor: pointer;
+  }
 }

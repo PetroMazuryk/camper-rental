@@ -40,11 +40,7 @@ export const CamperCard = () => {
                   {Array.isArray(gallery) && gallery.length > 0 ? (
                     <img className={scss.image} src={gallery[0]} alt={name} />
                   ) : (
-                    <img
-                      className={scss.image}
-                      src="default-image-path"
-                      alt="Default"
-                    />
+                    <img className={scss.image} src="#" alt="Default Image" />
                   )}
                 </div>
 
@@ -52,7 +48,9 @@ export const CamperCard = () => {
                   <div className={scss.headingInner}>
                     <h3 className={scss.heading}>{name}</h3>
                     <div className={scss.priceInner}>
-                      <p className={scss.heading}>&#8364;{price.toFixed(2)}</p>
+                      <p className={scss.heading}>
+                        &#8364;{price !== undefined ? price.toFixed(2) : 'N/A'}
+                      </p>
                       <button className={scss.buttonFavourite}>
                         <svg className={scss.active} width="21" height="19">
                           <use href={`${icon}#icon-heart`}></use>

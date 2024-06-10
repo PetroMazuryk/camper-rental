@@ -48,23 +48,22 @@
   line-height: 125%;
 }
 
-.buttonFavourite {
-  padding-top: 5px;
-  display: flex;
-  background-color: transparent;
-  transition: var(--transition);
+.like {
+  width: 24px;
+  height: 24px;
+  fill: transparent;
+  stroke: var(--main-text-color);
+}
+
+.likeActive {
+  fill: var(--bg-main-color);
+  stroke: var(--bg-main-color);
 }
 
 .iconLocation,
 .iconFavourite {
   fill: transparent;
   stroke: var(--main-text-color);
-}
-
-.iconFavourite:hover,
-.iconFavourite:focus {
-  fill: var(--bg-main-color);
-  stroke: var(--bg-main-color);
 }
 
 .iconRating {
@@ -145,11 +144,6 @@
 
 .text {
   text-transform: capitalize;
-}
-
-.active {
-  fill: var(--button-hover);
-  stroke: var(--button-hover);
 }
 
 // loadBtn

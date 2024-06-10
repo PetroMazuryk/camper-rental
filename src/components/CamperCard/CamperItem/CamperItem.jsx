@@ -1,4 +1,10 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
+import { selectFavoriteCampers } from '../../../redux/favorite/selectors';
+import {
+  addCamperFavorite,
+  deleteCamperFavorite,
+} from '../../../redux/favorite/slice';
 import { Modal } from '../../Modal/Modal';
 import { useModal } from '../../hooks/useModal';
 import icon from '../../../assets/sprite.svg';
@@ -7,6 +13,7 @@ import scss from './CamperItem.module.scss';
 export const CamperItem = ({ item }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
   const {
+    _id,
     name,
     rating,
     price,
@@ -19,6 +26,20 @@ export const CamperItem = ({ item }) => {
     engine,
     reviews,
   } = item;
+
+  const favoriteCampers = useSelector(selectFavoriteCampers);
+  const dispatch = useDispatch();
+
+  const isCamper = favoriteCampers.some(({ _id }) => _id === item._id);
+
+  const toggleFavoriteCamper = () => {
+    if (!isCamper) {
+      dispatch(addCamperFavorite(item));
+    } else {
+      dispatch(deleteCamperFavorite(_id));
+    }
+  };
+
   return (
     <>
       <div className={scss.imageWrapper}>
@@ -38,7 +59,12 @@ export const CamperItem = ({ item }) => {
               {price !== undefined ? price.toFixed(2) : 'N/A'}
             </p>
             <button className={scss.buttonFavourite}>
-              <svg className={scss.active} width="21" height="19">
+              <svg
+                onClick={toggleFavoriteCamper}
+                className={`${scss.like} ${isCamper ? scss.likeActive : ''}`}
+                width="21"
+                height="19"
+              >
                 <use href={`${icon}#icon-heart`}></use>
               </svg>
             </button>

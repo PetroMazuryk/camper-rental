@@ -1,0 +1,177 @@
+.catalogWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  padding: 24px;
+  width: 888px;
+  min-height: 358px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  width: 290px;
+  height: 310px;
+}
+
+.image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.infoWrapper {
+  width: 526px;
+  min-height: 310px;
+}
+
+.headingInner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.buttonFavourite {
+  padding-top: 5px;
+  display: flex;
+  background-color: transparent;
+  transition: var(--transition);
+}
+
+.iconLocation,
+.iconFavourite {
+  fill: transparent;
+  stroke: var(--main-text-color);
+}
+
+.iconFavourite:hover,
+.iconFavourite:focus {
+  fill: var(--bg-main-color);
+  stroke: var(--bg-main-color);
+}
+
+.iconRating {
+  fill: var(--yellow-collor);
+}
+
+.priceInner {
+  display: flex;
+  gap: 10px;
+}
+
+.boxInner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subjectInner {
+  display: flex;
+  gap: 16px;
+}
+
+.holder {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subject {
+  line-height: 150%;
+}
+
+.reviews {
+  text-decoration: underline;
+}
+
+.desc {
+  line-height: 150%;
+  color: var(--second-text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// category
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  line-height: 1.25;
+  background-color: var(--bg-segmented-color);
+  border-radius: 100px;
+  padding: 12px 16px;
+}
+
+.icon {
+  fill: var(--main-text-color);
+  stroke: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+.transIcon {
+  fill: transparent;
+  stroke: var(--main-text-color);
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  text-transform: capitalize;
+}
+
+.active {
+  fill: var(--button-hover);
+  stroke: var(--button-hover);
+}
+
+// loadBtn
+.btnWrapper {
+  text-align: center;
+}
+.loadBtn {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  border-radius: 200px;
+  padding: 16px 32px;
+  margin-bottom: 20px;
+
+  color: var(--main-text-color);
+  background-color: --bg-segmented-color;
+  border: 1px solid #47546733;
+
+  &:hover {
+    border: 1px solid var(--bg-main-color);
+    cursor: pointer;
+  }
+}

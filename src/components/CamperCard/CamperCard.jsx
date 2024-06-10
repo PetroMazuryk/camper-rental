@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../Modal/Modal';
 import { useModal } from '../../components/hooks/useModal';
-import { selectCampersData } from '../../redux/campers/selectors';
+
+import { selectAllCampers } from '../../redux/campers/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
 import icon from '../../assets/sprite.svg';
 import scss from './CamperCard.module.scss';
@@ -10,17 +11,23 @@ import scss from './CamperCard.module.scss';
 export const CamperCard = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
   const dispatch = useDispatch();
-  const campers = useSelector(selectCampersData);
+  const { items } = useSelector(selectAllCampers);
+
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchCampersAsync());
-  }, [dispatch]);
+    dispatch(fetchCampersAsync(page));
+  }, [dispatch, page]);
+
+  const loadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   return (
     <>
-      {Array.isArray(campers) && campers.length > 0 && (
+      {Array.isArray(items) && items.length > 0 && (
         <ul className={scss.listWrapper}>
-          {campers.map(
+          {items.map(
             ({
               _id,
               name,
@@ -144,7 +151,9 @@ export const CamperCard = () => {
           )}
         </ul>
       )}
-      <button className={scss.loadBtn}>Load more</button>
+      <button className={scss.loadBtn} onClick={loadMore}>
+        Load more
+      </button>
     </>
   );
 };

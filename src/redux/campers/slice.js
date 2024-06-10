@@ -14,10 +14,13 @@ const campersSlice = createSlice({
       .addCase(fetchCampersAsync.pending, state => {
         state.isLoading = true;
       })
-      .addCase(fetchCampersAsync.fulfilled, (state, action) => {
-        state.items = action.payload;
+      .addCase(fetchCampersAsync.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
+        const newItems = payload.filter(
+          camper => !state.items.find(item => item._id === camper._id)
+        );
+        state.items = [...state.items, ...newItems];
       })
       .addCase(fetchCampersAsync.rejected, (state, action) => {
         state.isLoading = false;
@@ -25,4 +28,4 @@ const campersSlice = createSlice({
       }),
 });
 
-export default campersSlice.reducer;
+export const camperReducer = campersSlice.reducer;

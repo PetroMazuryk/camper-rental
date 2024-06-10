@@ -1,11 +1,14 @@
-.listWrapper {
-  padding-top: 10px;
+.catalogWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 }
+
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -49,13 +52,13 @@
   padding-top: 5px;
   display: flex;
   background-color: transparent;
+  transition: var(--transition);
 }
 
 .iconLocation,
 .iconFavourite {
   fill: transparent;
   stroke: var(--main-text-color);
-  transition: var(--transition);
 }
 
 .iconFavourite:hover,

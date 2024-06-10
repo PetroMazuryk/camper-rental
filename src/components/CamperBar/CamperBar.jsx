@@ -1,5 +1,6 @@
 import { Button } from '../Button/Button';
 import { Equipment } from './Equipment/Equipment';
+import { Type } from './Type/Type';
 import icon from '../../assets/sprite.svg';
 import scss from './CamperBar.module.scss';
 export const CamperBar = () => {
@@ -25,10 +26,7 @@ export const CamperBar = () => {
           <Equipment />
         </div>
         <div>
-          <div>Vehicle </div>
-          <svg className={scss.lo}>
-            <use href={`${icon}#icon-edalts`}></use>
-          </svg>
+          <Type />
         </div>
       </div>
       <Button variant="show">Search</Button>

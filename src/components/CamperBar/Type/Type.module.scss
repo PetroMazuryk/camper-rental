@@ -1,0 +1,65 @@
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.equipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.itemCheckbox {
+  width: calc((360px - 20px) / 3);
+  max-width: 128px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+input:checked + .itemLabel {
+  border-color: var(--bg-main-color);
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  width: 112px;
+  height: 95px;
+  font-weight: 500;
+  line-height: 1.25;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0px 30px;
+}
+
+.itemIcon {
+  fill: transparent;
+  stroke: var(--main-text-color);
+  width: 32px;
+  height: 32px;
+}
+
+.itemIconFill {
+  fill: var(--main-text-color);
+  stroke: transparent;
+}

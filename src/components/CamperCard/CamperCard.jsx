@@ -5,6 +5,7 @@ import { useModal } from '../../components/hooks/useModal';
 
 import { selectAllCampers } from '../../redux/campers/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
+import { Button } from '../Button/Button';
 import toast from 'react-hot-toast';
 import icon from '../../assets/sprite.svg';
 import scss from './CamperCard.module.scss';
@@ -149,14 +150,10 @@ export const CamperCard = () => {
                         <p className={scss.text}>AC</p>
                       </li>
                     </ul>
-                    <button
-                      className={scss.button}
-                      type="button"
-                      onClick={openModal}
-                    >
-                      Show more
-                    </button>
 
+                    <Button variant="show" onClick={openModal}>
+                      Show more
+                    </Button>
                     <Modal isOpen={isModalOpen} onClose={closeModal}>
                       <div>Camper Card</div>
                     </Modal>

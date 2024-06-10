@@ -12,12 +12,20 @@ export const CamperCard = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
   const dispatch = useDispatch();
   const { items } = useSelector(selectAllCampers);
-
   const [page, setPage] = useState(1);
+  const [hiddenBtn, setHiddenBtn] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCampersAsync(page));
   }, [dispatch, page]);
+
+  useEffect(() => {
+    if (page > Math.ceil(items.length / 4)) {
+      setHiddenBtn(false);
+    } else {
+      setHiddenBtn(true);
+    }
+  }, [page, items]);
 
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
@@ -151,9 +159,13 @@ export const CamperCard = () => {
           )}
         </ul>
       )}
-      <button className={scss.loadBtn} onClick={loadMore}>
-        Load more
-      </button>
+      <div className={scss.btnWrapper}>
+        {items && hiddenBtn && (
+          <button type="button" className={scss.loadBtn} onClick={loadMore}>
+            Load more
+          </button>
+        )}
+      </div>
     </>
   );
 };

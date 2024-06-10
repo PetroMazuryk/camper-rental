@@ -168,6 +168,9 @@
 }
 
 // loadBtn
+.btnWrapper {
+  text-align: center;
+}
 .loadBtn {
   font-family: Inter;
   font-size: 16px;
@@ -176,13 +179,14 @@
   letter-spacing: -0.005em;
   border-radius: 200px;
   padding: 16px 32px;
+  margin-bottom: 20px;
 
   color: var(--main-text-color);
   background-color: --bg-segmented-color;
   border: 1px solid #47546733;
 
   &:hover {
-    border: 1px solid #e44848;
+    border: 1px solid var(--bg-main-color);
     cursor: pointer;
   }
 }

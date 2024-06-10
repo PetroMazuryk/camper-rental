@@ -5,6 +5,7 @@ import { useModal } from '../../components/hooks/useModal';
 
 import { selectAllCampers } from '../../redux/campers/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
+import toast from 'react-hot-toast';
 import icon from '../../assets/sprite.svg';
 import scss from './CamperCard.module.scss';
 
@@ -16,7 +17,14 @@ export const CamperCard = () => {
   const [hiddenBtn, setHiddenBtn] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchCampersAsync(page));
+    dispatch(fetchCampersAsync(page))
+      .unwrap()
+      .then(() => {
+        toast.success('Cards added successfully');
+      })
+      .catch(() => {
+        toast.error('A download error occurred');
+      });
   }, [dispatch, page]);
 
   useEffect(() => {

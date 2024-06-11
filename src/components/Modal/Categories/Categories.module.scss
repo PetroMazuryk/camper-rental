@@ -1,0 +1,35 @@
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  line-height: 1.25;
+  background-color: var(--bg-segmented-color);
+  border-radius: 100px;
+  padding: 12px 16px;
+}
+
+.icon {
+  fill: var(--main);
+  stroke: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+.transIcon {
+  fill: transparent;
+  stroke: var(--main-text-color);
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  text-transform: capitalize;
+}

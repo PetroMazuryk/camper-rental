@@ -9,6 +9,7 @@ import { Modal } from '../../Modal/Modal';
 import { useModal } from '../../hooks/useModal';
 import icon from '../../../assets/sprite.svg';
 import scss from './CamperItem.module.scss';
+import { Mavericks } from '../../Modal/Mavericks/Mavericks';
 
 export const CamperItem = ({ item }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
@@ -140,7 +141,7 @@ export const CamperItem = ({ item }) => {
           </Button>
         </div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div>Camper Card</div>
+          <Mavericks item={item} />
         </Modal>
       </div>
     </>

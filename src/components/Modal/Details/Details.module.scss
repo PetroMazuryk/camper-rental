@@ -1,0 +1,27 @@
+.details {
+  margin-top: 44px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 24px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  text-transform: capitalize;
+}

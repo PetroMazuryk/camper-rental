@@ -3,8 +3,6 @@ import scss from './ToggleTab.module.scss';
 import { Features } from '../Features/Features';
 
 export const ToggleTab = ({ item }) => {
-  // const { price, location } = item;
-  // console.log('PPPPPPPP ToggleTab', price);
   const [activeTab, setActiveTab] = useState(null);
 
   const handleFeaturesClick = () => {
@@ -38,7 +36,7 @@ export const ToggleTab = ({ item }) => {
 
       <>
         {activeTab === 'features' && <Features item={item} />}
-        {activeTab === 'reviews' && <div>Reviews Toggle</div>}
+        {activeTab === 'reviews' && <div>Reviews</div>}
       </>
     </>
   );

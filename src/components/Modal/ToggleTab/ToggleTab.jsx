@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import scss from './ToggleTab.module.scss';
 import { Features } from '../Features/Features';
+import { Reviews } from '../Reviews/Reviews';
 
 export const ToggleTab = ({ item }) => {
   const [activeTab, setActiveTab] = useState(null);
@@ -36,7 +37,7 @@ export const ToggleTab = ({ item }) => {
 
       <>
         {activeTab === 'features' && <Features item={item} />}
-        {activeTab === 'reviews' && <div>Reviews</div>}
+        {activeTab === 'reviews' && <Reviews item={item} />}
       </>
     </>
   );

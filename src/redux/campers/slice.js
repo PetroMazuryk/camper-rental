@@ -9,7 +9,7 @@ const campersSlice = createSlice({
     isLoading: false,
     error: null,
   },
-
+  reducers: {},
   extraReducers: builder =>
     builder
       .addCase(fetchCampersAsync.pending, state => {

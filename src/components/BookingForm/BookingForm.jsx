@@ -7,8 +7,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Button } from '../Button/Button';
 import icon from '../../assets/sprite.svg';
 import { postCampersAsync } from '../../redux/campers/operations';
-
 import scss from './BookingForm.module.scss';
+
 export const BookingForm = () => {
   const dispatch = useDispatch();
 
@@ -27,22 +27,25 @@ export const BookingForm = () => {
     watch,
     formState: { errors },
   } = useForm({
-    mode: 'onChanges',
+    mode: 'onChange',
     reValidateMode: 'onChange',
-
     resolver: yupResolver(validationSchema),
     defaultValues: { name: '', email: '', date: '', comment: '' },
   });
 
   const dateReceived = watch('date');
 
-  const onSubmit = form => {
+  const onSubmit = async form => {
     form.date = dateReceived;
 
-    dispatch(postCampersAsync(form));
-    reset();
+    const resultAction = await dispatch(postCampersAsync(form));
 
-    window.location.reload();
+    if (postCampersAsync.fulfilled.match(resultAction)) {
+      console.log('Form submitted successfully:', resultAction.payload);
+      reset();
+    } else {
+      console.log('Form submission failed:', resultAction.payload);
+    }
   };
 
   return (

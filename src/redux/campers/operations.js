@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { campersFetch } from '../../services/apiCamper';
-import { campersPost } from '../../services/apiCamper';
 
 import axios from 'axios';
 
@@ -23,7 +22,7 @@ export const postCampersAsync = createAsyncThunk(
   'adverts/sendForm',
   async (form, { rejectWithValue }) => {
     try {
-      const { data } = await apiInstance.post('/connect', { form });
+      const { data } = await apiInstance.post('/adverts', { form });
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data.message);

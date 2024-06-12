@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampersAsync } from './operations';
+import { fetchCampersAsync, postCampersAsync } from './operations';
 
 const campersSlice = createSlice({
   name: 'campers',
   initialState: {
     items: [],
+    forms: [],
     isLoading: false,
     error: null,
   },
@@ -25,6 +26,19 @@ const campersSlice = createSlice({
       .addCase(fetchCampersAsync.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
+      })
+
+      .addCase(postCampersAsync.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(postCampersAsync.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.forms = payload;
+      })
+      .addCase(postCampersAsync.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
       }),
 });
 

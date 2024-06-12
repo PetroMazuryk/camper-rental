@@ -1,4 +1,5 @@
 import icons from '../../../assets/sprite.svg';
+import { BookingForm } from '../../BookingForm/BookingForm';
 import scss from './Reviews.module.scss';
 
 export const Reviews = ({ item }) => {
@@ -33,7 +34,7 @@ export const Reviews = ({ item }) => {
   );
 
   return (
-    <>
+    <div className={scss.reviewContainer}>
       <div className={scss.reviewsWrapper}>
         {reviews?.length > 0 ? (
           <ul className={scss.list}>{elements}</ul>
@@ -41,6 +42,7 @@ export const Reviews = ({ item }) => {
           <h3 className={scss.text}>We have no reviews for this camper</h3>
         )}
       </div>
-    </>
+      <BookingForm />
+    </div>
   );
 };

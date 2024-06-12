@@ -11,7 +11,6 @@ import icon from '../../../assets/sprite.svg';
 import scss from './CamperItem.module.scss';
 import { Mavericks } from '../../Modal/Mavericks/Mavericks';
 import { ToggleTab } from '../../Modal/ToggleTab/ToggleTab';
-// import { Features } from '../../Modal/Features/Features';
 
 export const CamperItem = ({ item }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
@@ -145,7 +144,6 @@ export const CamperItem = ({ item }) => {
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <Mavericks item={item} />
           <ToggleTab item={item} />
-          {/* <Features item={item} /> */}
         </Modal>
       </div>
     </>

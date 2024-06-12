@@ -15,7 +15,12 @@ export const campersFetch = async (page = 1) => {
   return data;
 };
 
-// export const campersFetch = async () => {
-//   const { data } = await apiInstance.get('/adverts');
-//   return data;
-// };
+export const campersPost = async form => {
+  const { data } = await apiInstance.post('/adverts', {
+    params: {
+      form,
+    },
+  });
+
+  return data;
+};

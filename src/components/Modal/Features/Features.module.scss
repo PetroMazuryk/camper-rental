@@ -4,5 +4,6 @@
 }
 
 .categories {
-  width: calc((902px - 24px) / 2);
+  display: flex;
+  gap: 24px;
 }

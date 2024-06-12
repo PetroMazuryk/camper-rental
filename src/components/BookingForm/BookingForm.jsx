@@ -9,15 +9,18 @@ import icon from '../../assets/sprite.svg';
 import { postCampersAsync } from '../../redux/campers/operations';
 import scss from './BookingForm.module.scss';
 
+const validationSchema = yup.object().shape({
+  name: yup
+    .string()
+    .matches(/^[A-Za-z\s]+$/, 'Name must only contain letters and spaces')
+    .required('Name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  date: yup.date().required('Date is required'),
+  comment: yup.string(),
+});
+
 export const BookingForm = () => {
   const dispatch = useDispatch();
-
-  const validationSchema = yup.object().shape({
-    name: yup.string().required('Name is required'),
-    email: yup.string().email('Invalid email').required('Email is required'),
-    date: yup.date().required('Date is required'),
-    comment: yup.string(),
-  });
 
   const {
     control,
@@ -63,7 +66,7 @@ export const BookingForm = () => {
           className={`${scss.inputCommon} ${scss.input}`}
         />
         {errors.name && (
-          <span className={scss.errorMessage}>this field is required</span>
+          <span className={scss.errorMessage}>{errors.name.message}</span>
         )}
 
         <div className={scss.inputsInner}>
@@ -74,9 +77,7 @@ export const BookingForm = () => {
             className={`${scss.inputCommon} ${scss.input}`}
           />
           {errors.email && (
-            <span className={scss.errorMessage}>
-              please enter a valid email
-            </span>
+            <span className={scss.errorMessage}>{errors.email.message}</span>
           )}
         </div>
 
@@ -108,7 +109,7 @@ export const BookingForm = () => {
             </svg>
           </div>
           {errors.date && (
-            <span className={scss.errorMessage}>this field is required</span>
+            <span className={scss.errorMessage}>{errors.date.message}</span>
           )}
         </div>
 

@@ -1,52 +1,44 @@
-Сервіс оренди кемперів !
+                         Сервіс оренди кемперів !
 
-[Alt text](/Campers.png)
+![Screenshot of my project](./src/assets/Campers.png)
 
-Цей проєкт є тестовим завданням для розробки веб-додатка для компанії, яка
-пропонує послуги оренди кемперів в Україні. Додаток складається з трьох основних
-сторінок:
+This project is a test task for developing a web application for a company that
+offers camper van rental services in Ukraine.
 
-Головна сторінка: Містить загальний опис послуг, які надає компанія.
+The application consists of three main parts pages: The main page: Contains a
+general description of the services provided by the company. Catalog page:
+Contains a catalog of campers with various configurations, locations, equipment,
+and types. Favorites page: Shows a list of ads that the user has favorited.
 
-Сторінка каталогу: Містить каталог кемперів з різними конфігураціями,
-місцезнаходженням, обладнанням та типами.
+Functionality: Main page: Contains a general description of the company's
+services. Page directory: Displays a list of camper ads. First, it shows four
+ads, more can be loaded using the "Load more" button. The y button in the form
+of a heart adds the ad to favorites and changes its color. This state is saved
+when the page is reloaded. Pressing again deletes ad from favorites and returns
+the color of the button. The "Show more" button opens a modal window with
+detailed information about the camper. The window can be closed by clicking the
+close button, clicking on the background, or pressing the Esc key. Modal window
+contains camper details and user reviews displayed depending on active tab.
+There is also a booking form with fields for name, email, date reservation and
+comment.
 
-Сторінка улюблених: Показує список оголошень, які користувач додав до улюблених.
+Implemented technical requirements: Fixed pixel layout, semantic and valid HTML.
+Absence of errors inbrowser console. Using Redux to manage state. Using Axios
+for HTTP requests. Implementation on native JavaScript using bundler Vite and
+React. Interactive elements work according to the technical task. The code is
+formatted and contains no comments. Configuring the MockAPI backend. Used
+MockAPI to create custom backend for development. Created adverts resource with
+fields: id, name, price, rating, location, adults, children, engine,
+transmission, form, length, width, height, tank, consumption, description,
+details, gallery, reviews. The database contains 15 ads with different values
+Implemented pagination to display 4 ads per page.
 
-Функціонал: Головна сторінка: Містить загальний опис послуг компанії. Сторінка
-каталогу: Відображає список оголошень про кемпери. Спочатку показує чотири
-оголошення, більше можна завантажити за допомогою кнопки "Load more". Кнопка у
-вигляді серця додає оголошення до улюблених і змінює свій колір. Цей стан
-зберігається при перезавантаженні сторінки. Повторне натискання видаляє
-оголошення з улюблених і повертає колір кнопки. Кнопка "Show more" відкриває
-модальне вікно з детальною інформацією про кемпер. Вікно можна закрити
-натисканням кнопки закриття, натисканням на фон або клавішею Esc. Модальне вікно
-містить деталі про кемпер та відгуки користувачів, які показуються залежно від
-активної вкладки. Також є форма для бронювання з полями для імені, email, дати
-бронювання та коментаря.
+Routing Used React Router for routing: The following routes are defined: — Main
+page /catalog — Catalog page/favorites — Favorites page Redirection to the main
+page is configuredfor non-existent routes.
 
-Реалізовані технічні вимоги:
+Development and Deployment The application is developed using React with the
+Vite bundler. The project is deployed on GitHub Pages.
 
-Фіксована верстка в пікселях, семантичний і валідний HTML. Відсутність помилок у
-консолі браузера. Використання Redux для керування станом. Використання Axios
-для HTTP-запитів. Реалізація на нативному JavaScript з використанням бандлера
-Vite та React. Інтерактивні елементи працюють відповідно до технічного завдання.
-Код відформатований і не містить коментарів. Налаштування бекенду MockAPI.
-Використано MockAPI для створення персонального бекенду для розробки. Створено
-ресурс adverts з полями: \_id, name, price, rating, location, adults, children,
-engine, transmission, form, length, width, height, tank, consumption,
-description, details, gallery, reviews. У базі є 15 оголошень з різними
-значеннями. Реалізована пагінація для відображення 4 оголошень на сторінці.
-
-Маршрутизація Використано React Router для маршрутизації.
-
-Визначено наступні маршрути: / - Головна сторінка /catalog - Сторінка каталогу
-/favorites - Сторінка улюблених Налаштовано перенаправлення на головну сторінку
-для неіснуючих маршрутів.
-
-Розробка та деплоймент Додаток розроблений за допомогою React з бандлером Vite.
-Проєкт задеплоєний на GitHub Pages.
-
-Запуск проєкту Клонуйте репозиторій. Встановіть залежності: npm install
-Запустіть сервер розробки: npm run dev або npm start Відкрийте браузер і
-перейдіть за адресою: http://localhost:3000
+Launching the project: Clone the repository. Install dependencies: npm install
+Start the development server: npm run dev or npm start.

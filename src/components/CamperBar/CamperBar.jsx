@@ -17,7 +17,7 @@ export const CamperBar = () => {
               name="location"
               id="location"
               className={scss.locationInput}
-              placeholder="Kyiv, Ukraine"
+              placeholder="City"
             />
           </div>
         </div>

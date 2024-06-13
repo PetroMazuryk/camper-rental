@@ -1,4 +1,4 @@
-                         Сервіс оренди кемперів !
+                    Camper rental service !
 
 ![Screenshot of my project](./src/assets/Campers.png)
 

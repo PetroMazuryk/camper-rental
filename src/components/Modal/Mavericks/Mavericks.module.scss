@@ -32,6 +32,7 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
 }
+
 .starIcon {
   width: 16px;
   height: 16px;
@@ -47,23 +48,22 @@
 .gallery {
   display: flex;
   gap: 16px;
-  padding: 24px 0;
+  margin: 24px 0;
 }
 
 .thumb {
+  width: 290px;
   height: 310px;
-  min-width: 290px;
-  border-radius: 10px;
 }
 
 .image {
   height: 100%;
   width: 100%;
+  border-radius: 10px;
   object-fit: cover;
 }
 
 .desc {
-  max-width: 900px;
   line-height: 150%;
   color: var(--second-text-color);
 }

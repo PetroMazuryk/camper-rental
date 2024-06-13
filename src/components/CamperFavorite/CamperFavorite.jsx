@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { CamperItem } from '../CamperCard/CamperItem/CamperItem';
+import { CamperItem } from '../CamperItem/CamperItem';
 import { selectFavoriteCampers } from '../../redux/favorite/selectors';
 import scss from './CamperFavorite.module.scss';
 

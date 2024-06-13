@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectAllCampers } from '../../redux/campers/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
 
-import toast from 'react-hot-toast';
-
-import scss from './CamperCard.module.scss';
 import { CamperBar } from '../CamperBar/CamperBar';
-import { CamperItem } from './CamperItem/CamperItem';
+import { CamperItem } from '../CamperItem/CamperItem';
 
-export const CamperCard = () => {
+import toast from 'react-hot-toast';
+import scss from './CamperList.module.scss';
+
+export const CamperList = () => {
   const dispatch = useDispatch();
   const { items } = useSelector(selectAllCampers);
 

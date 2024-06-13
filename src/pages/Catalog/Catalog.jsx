@@ -1,10 +1,10 @@
-import { CamperCard } from '../../components/CamperCard/CamperCard';
+import { CamperList } from '../../components/CamperList/CamperList';
 
 import scss from './Catalog.module.scss';
 const Catalog = () => {
   return (
     <div className={scss.catalogWrapper}>
-      <CamperCard />
+      <CamperList />
     </div>
   );
 };

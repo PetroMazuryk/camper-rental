@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '../../../components/Button/Button';
-import { selectFavoriteCampers } from '../../../redux/favorite/selectors';
+import { Button } from '../Button/Button';
+import { selectFavoriteCampers } from '../../redux/favorite/selectors';
 import {
   addCamperFavorite,
   deleteCamperFavorite,
-} from '../../../redux/favorite/slice';
-import { Modal } from '../../Modal/Modal';
+} from '../../redux/favorite/slice';
+import { Modal } from '../Modal/Modal';
 import { useModal } from '../../hooks/useModal';
-import icon from '../../../assets/sprite.svg';
+import icon from '../../assets/sprite.svg';
 import scss from './CamperItem.module.scss';
-import { Mavericks } from '../../Modal/Mavericks/Mavericks';
-import { ToggleTab } from '../../Modal/ToggleTab/ToggleTab';
+import { Mavericks } from '../Modal/Mavericks/Mavericks';
+import { ToggleTab } from '../Modal/ToggleTab/ToggleTab';
 
 export const CamperItem = ({ item }) => {
   const { isModalOpen, openModal, closeModal } = useModal();

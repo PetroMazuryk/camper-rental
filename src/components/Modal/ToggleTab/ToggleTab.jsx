@@ -4,7 +4,7 @@ import { Features } from '../Features/Features';
 import { Reviews } from '../Reviews/Reviews';
 
 export const ToggleTab = ({ item }) => {
-  const [activeTab, setActiveTab] = useState(null);
+  const [activeTab, setActiveTab] = useState('features');
 
   const handleFeaturesClick = () => {
     setActiveTab('features');

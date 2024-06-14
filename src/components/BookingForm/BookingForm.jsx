@@ -44,10 +44,8 @@ export const BookingForm = () => {
     const resultAction = await dispatch(postCampersAsync(form));
 
     if (postCampersAsync.fulfilled.match(resultAction)) {
-      console.log('Form submitted successfully:', resultAction.payload);
       reset();
-    } else {
-      console.log('Form submission failed:', resultAction.payload);
+      window.location.reload();
     }
   };
 

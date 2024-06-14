@@ -38,15 +38,21 @@ export const BookingForm = () => {
 
   const dateReceived = watch('date');
 
-  const onSubmit = async form => {
-    form.date = dateReceived;
+  // const onSubmit = async form => {
+  //   form.date = dateReceived;
 
-    const resultAction = await dispatch(postCampersAsync(form));
+  //   const resultAction = await dispatch(postCampersAsync(form));
 
-    if (postCampersAsync.fulfilled.match(resultAction)) {
-      reset();
-      window.location.reload();
-    }
+  //   if (postCampersAsync.fulfilled.match(resultAction)) {
+  //     reset();
+  //     window.location.reload();
+  //   }
+  // };
+  const onSubmit = () => {
+    dispatch(postCampersAsync());
+
+    reset();
+    window.location.reload();
   };
 
   return (

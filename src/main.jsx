@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import 'modern-normalize';
-import './index.scss';
+import './styles/imports.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

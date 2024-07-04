@@ -71,6 +71,7 @@
 .navWrap {
   display: flex;
   gap: 30px;
+  padding: 10px 24px;
   margin-left: auto;
   margin-right: 22px;
   font-size: 20px;
@@ -78,6 +79,11 @@
   font-family: var(--font-family);
   text-transform: uppercase;
   text-shadow: 0 0 50px blue;
+
+  border-radius: 12px;
+  background: #ffffff1a;
+  border: 1px solid #ffffff20;
+  backdrop-filter: blur(26px) saturate(120%);
 
   @media screen and (max-width: 530px) {
     margin-left: 0;

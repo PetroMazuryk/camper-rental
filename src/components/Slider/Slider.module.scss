@@ -1,4 +1,5 @@
 .sliderWrapper {
+  position: relative;
   margin: 0 auto;
   max-width: 1260px;
 }
@@ -8,4 +9,14 @@
   height: 540px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.sliderText {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: var(--aqua-color);
+  background-color: var(--second-text-color);
 }

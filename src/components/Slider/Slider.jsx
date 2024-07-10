@@ -21,6 +21,9 @@ export const Slider = ({ images }) => {
         src={images[index]}
         alt={`Slide ${index}`}
       />
+      <strong className={scss.sliderText}>
+        Rent camping sites for the perfect outdoor getaway!
+      </strong>
     </div>
   );
 };

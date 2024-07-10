@@ -1,9 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import ImgCamper from '../../assets/campers.webp';
+
+import ImgA from '../../assets/slider/img-1.webp';
+import ImgB from '../../assets/slider/img-2.jpg';
+import ImgC from '../../assets/slider/img-3.jpg';
+import ImgD from '../../assets/slider/img-4.jpg';
+import ImgE from '../../assets/slider/img-5.jpg';
+
+import { Slider } from '../../components/Slider/Slider';
 import { Footer } from '../../components/Footer/Footer';
 import scss from './Home.module.scss';
 
 const Home = () => {
+  const images = [ImgA, ImgB, ImgC, ImgD, ImgE];
   return (
     <div className={scss.homeWrapper}>
       <h1 className={scss.homeTitle}>Welcome to the campers shop</h1>
@@ -13,9 +21,7 @@ const Home = () => {
           Catalog
         </NavLink>
       </h2>
-      <div className={scss.wrapperImg}>
-        <img className={scss.img} src={ImgCamper} alt="image camper" />
-      </div>
+      <Slider images={images} />
       <div>
         <Footer />
       </div>

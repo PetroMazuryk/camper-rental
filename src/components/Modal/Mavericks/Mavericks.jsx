@@ -5,7 +5,7 @@ export const Mavericks = ({ item }) => {
   const { name, rating, price, location, description, gallery, reviews } = item;
   return (
     <div className={scss.container}>
-      <div>
+      <div className={scss.wrapperFixed}>
         <p className={scss.title}>{name}</p>
         <div className={scss.rate}>
           <div className={scss.rating}>

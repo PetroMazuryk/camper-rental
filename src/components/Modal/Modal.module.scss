@@ -18,7 +18,7 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  padding: 32px;
+  padding: 0 32px 32px;
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -52,6 +52,8 @@
 .button:hover .icon,
 .button:focus .icon {
   stroke: var(--btn-hover-color);
+  border: 1px solid red;
+  border-radius: 50%;
 }
 
 .icon {

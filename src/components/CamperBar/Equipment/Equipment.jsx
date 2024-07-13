@@ -29,6 +29,11 @@ export const Equipment = () => {
       title: 'Shower/WC',
       backendName: 'bathroom',
     },
+    {
+      icon: 'freezer',
+      title: 'Freezer',
+      backendName: 'freezer',
+    },
   ];
   return (
     <div>

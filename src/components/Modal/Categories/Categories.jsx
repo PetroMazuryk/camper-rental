@@ -46,7 +46,7 @@ export const Categories = ({ item }) => {
         </li>
         <li className={scss.categoryItem}>
           <svg className={scss.transIcon}>
-            <use href={`${icons}#icon-bed`}></use>
+            <use href={`${icons}#icon-beds`}></use>
           </svg>
           {`${beds} beds`}
         </li>

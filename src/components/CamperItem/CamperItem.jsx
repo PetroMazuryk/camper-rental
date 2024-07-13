@@ -134,6 +134,24 @@ export const CamperItem = ({ item }) => {
               </svg>
               <p className={scss.text}>AC</p>
             </li>
+            <li className={scss.categoryItem}>
+              <svg className={scss.transIcon}>
+                <use href={`${icon}#icon-cd`}></use>
+              </svg>
+              <p className={scss.text}>CD</p>
+            </li>
+            <li className={scss.categoryItem}>
+              <svg className={scss.transIcon}>
+                <use href={`${icon}#icon-tv`}></use>
+              </svg>
+              <p className={scss.text}>TV</p>
+            </li>
+            <li className={scss.categoryItem}>
+              <svg className={scss.transIcon}>
+                <use href={`${icon}#icon-hob`}></use>
+              </svg>
+              <p className={scss.text}>Hob</p>
+            </li>
           </ul>
 
           <Button variant="show" onClick={openModal}>

@@ -1,10 +1,11 @@
 import icons from '../../../assets/sprite.svg';
 import scss from './Mavericks.module.scss';
+import { ToggleTab } from '../ToggleTab/ToggleTab';
 
 export const Mavericks = ({ item }) => {
   const { name, rating, price, location, description, gallery, reviews } = item;
   return (
-    <div className={scss.container}>
+    <>
       <div className={scss.wrapperFixed}>
         <p className={scss.title}>{name}</p>
         <div className={scss.rate}>
@@ -26,14 +27,17 @@ export const Mavericks = ({ item }) => {
         <p className={scss.price}>{`€${price}`}</p>
       </div>
 
-      <ul className={scss.gallery}>
-        {gallery.map((image, index) => (
-          <li key={index} className={scss.thumb}>
-            <img src={image} alt={name} className={scss.image} />
-          </li>
-        ))}
-      </ul>
-      <p className={scss.desc}>{description}</p>
-    </div>
+      <div className={scss.scrollBlock}>
+        <ul className={scss.gallery}>
+          {gallery.map((image, index) => (
+            <li key={index} className={scss.thumb}>
+              <img src={image} alt={name} className={scss.image} />
+            </li>
+          ))}
+        </ul>
+        <p className={scss.desc}>{description}</p>
+        <ToggleTab item={item} />
+      </div>
+    </>
   );
 };

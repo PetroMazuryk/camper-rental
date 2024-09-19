@@ -41,7 +41,7 @@ export const CamperList = () => {
   };
 
   return (
-    <div>
+    <>
       <div className={scss.catalogWrapper}>
         <CamperBar />
         {Array.isArray(items) && items.length > 0 && (
@@ -62,6 +62,6 @@ export const CamperList = () => {
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 };

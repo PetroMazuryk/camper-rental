@@ -1,0 +1,18 @@
+.containerImg {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.thumb {
+  width: 290px;
+  height: 310px;
+}
+
+.camperImg {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}

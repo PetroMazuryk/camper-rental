@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import icon from '../../assets/sprite.svg';
+
 import scss from './ModalSlider.module.scss';
 
 export const ModalSlider = ({
@@ -42,18 +44,23 @@ export const ModalSlider = ({
 
   return (
     <>
-      {!isOpen && (
+      {isOpen && (
         <div className={scss.modalWrapper} onClick={handleModalClick}>
           <div className={scss.modalContent}>
-            <button className={scss.closeButton} onClick={handleClose}>
+            <button className={scss.closeBtn} onClick={handleClose}>
               &times;
             </button>
-            <button className={scss.prevButton} onClick={handlePrev}>
-              {'<'}
+            <button className={scss.prevBtn} onClick={handlePrev}>
+              <svg className={scss.icon} width="36" height="36">
+                <use href={`${icon}#icon-circle-left`}></use>
+              </svg>
             </button>
-            <button className={scss.nextButton} onClick={handleNext}>
-              {'>'}
+            <button className={scss.nextBtn} onClick={handleNext}>
+              <svg className={scss.icon} width="36" height="36">
+                <use href={`${icon}#icon-circle-right`}></use>
+              </svg>
             </button>
+
             <img className={scss.modalImg} src={image} alt="Modal Image" />
           </div>
         </div>

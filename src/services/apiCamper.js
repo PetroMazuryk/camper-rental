@@ -4,7 +4,7 @@ export const apiInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
 
-export const campersFetch = async (page = 1) => {
+export const campersFetch = async page => {
   const { data } = await apiInstance.get('/adverts', {
     params: {
       page,

@@ -8,8 +8,13 @@ const campersSlice = createSlice({
     forms: [],
     isLoading: false,
     error: null,
+    page: 1,
   },
-  reducers: {},
+  reducers: {
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(fetchCampersAsync.pending, state => {
@@ -18,14 +23,24 @@ const campersSlice = createSlice({
       .addCase(fetchCampersAsync.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        const newItems = payload.filter(
-          camper => !state.items.find(item => item._id === camper._id)
+        // const newItems = payload.filter(
+        //   camper => !state.items.find(item => item._id === camper._id)
+        // );
+        // state.items = [...state.items, ...newItems];
+        const updatedItems = [...state.items, ...payload].reduce(
+          (acc, item) => {
+            if (!acc.some(existing => existing._id === item._id)) {
+              acc.push(item);
+            }
+            return acc;
+          },
+          []
         );
-        state.items = [...state.items, ...newItems];
+        state.items = updatedItems;
       })
       .addCase(fetchCampersAsync.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message || 'Unknown error';
       })
 
       .addCase(postCampersAsync.pending, state => {
@@ -42,4 +57,5 @@ const campersSlice = createSlice({
       }),
 });
 
+export const { setPage } = campersSlice.actions;
 export const camperReducer = campersSlice.reducer;

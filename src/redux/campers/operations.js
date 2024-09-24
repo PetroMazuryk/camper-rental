@@ -1,11 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { campersFetch } from '../../services/apiCamper';
-
-import axios from 'axios';
-
-export const apiInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
+import { campersFetch, campersPost } from '../../services/apiCamper';
 
 export const fetchCampersAsync = createAsyncThunk(
   'campers/fetchCampers',
@@ -22,8 +16,7 @@ export const postCampersAsync = createAsyncThunk(
   'adverts/sendForm',
   async (form, { rejectWithValue }) => {
     try {
-      const { data } = await apiInstance.post('/adverts', { form });
-      return data;
+      return await campersPost(form);
     } catch (error) {
       return rejectWithValue(error.response.data.message);
     }

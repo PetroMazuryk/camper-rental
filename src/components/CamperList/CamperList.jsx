@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectAllCampers } from '../../redux/campers/selectors';
+import { selectCampersData, selectPage } from '../../redux/campers/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
+import { setPage } from '../../redux/campers/slice';
 
 import { CamperBar } from '../CamperBar/CamperBar';
 import { CamperItem } from '../CamperItem/CamperItem';
@@ -12,9 +13,9 @@ import scss from './CamperList.module.scss';
 
 export const CamperList = () => {
   const dispatch = useDispatch();
-  const { items } = useSelector(selectAllCampers);
+  const items = useSelector(selectCampersData);
+  const page = useSelector(selectPage);
 
-  const [page, setPage] = useState(1);
   const [hiddenBtn, setHiddenBtn] = useState(false);
 
   useEffect(() => {
@@ -29,15 +30,16 @@ export const CamperList = () => {
   }, [dispatch, page]);
 
   useEffect(() => {
-    if (page > Math.ceil(items.length / 4)) {
+    if (items.length % 4 !== 0 || items.length === 0) {
       setHiddenBtn(false);
     } else {
       setHiddenBtn(true);
     }
-  }, [page, items]);
+  }, [items]);
 
   const loadMore = () => {
-    setPage(prevPage => prevPage + 1);
+    dispatch(setPage(page + 1));
+    console.log(page, 'page');
   };
 
   return (

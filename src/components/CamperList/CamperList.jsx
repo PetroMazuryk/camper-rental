@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectCampersData, selectPage } from '../../redux/campers/selectors';
+import { selectFilterLocation } from '../../redux/filter/selectors';
 import { fetchCampersAsync } from '../../redux/campers/operations';
-import { setPage } from '../../redux/campers/slice';
+import { setPage, clearItems } from '../../redux/campers/slice';
 
 import { CamperBar } from '../CamperBar/CamperBar';
 import { CamperItem } from '../CamperItem/CamperItem';
@@ -15,19 +16,31 @@ export const CamperList = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectCampersData);
   const page = useSelector(selectPage);
-
+  const locationFilter = useSelector(selectFilterLocation);
   const [hiddenBtn, setHiddenBtn] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchCampersAsync(page))
+    dispatch(setPage(1));
+    1;
+    dispatch(clearItems());
+  }, [locationFilter, dispatch]);
+
+  useEffect(() => {
+    if (isInitialLoad) {
+      setIsInitialLoad(false);
+      return;
+    }
+
+    dispatch(fetchCampersAsync({ page, locationFilter }))
       .unwrap()
       .then(() => {
-        toast.success('Cards added successfully');
+        toast.success('Campers loaded successfully');
       })
       .catch(() => {
         toast.error('A download error occurred');
       });
-  }, [dispatch, page]);
+  }, [dispatch, page, locationFilter, isInitialLoad]);
 
   useEffect(() => {
     if (items.length % 4 !== 0 || items.length === 0) {
@@ -39,7 +52,6 @@ export const CamperList = () => {
 
   const loadMore = () => {
     dispatch(setPage(page + 1));
-    console.log(page, 'page');
   };
 
   return (

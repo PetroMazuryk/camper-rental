@@ -3,11 +3,11 @@ import { campersFetch, campersPost } from '../../services/apiCamper';
 
 export const fetchCampersAsync = createAsyncThunk(
   'campers/fetchCampers',
-  async (page, { rejectWithValue }) => {
+  async ({ page, locationFilter }, { rejectWithValue }) => {
     try {
-      return await campersFetch(page);
+      return await campersFetch(page, locationFilter);
     } catch (error) {
-      return rejectWithValue(error.response.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -18,7 +18,7 @@ export const postCampersAsync = createAsyncThunk(
     try {
       return await campersPost(form);
     } catch (error) {
-      return rejectWithValue(error.response.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );

@@ -22,7 +22,6 @@ export const CamperList = () => {
 
   useEffect(() => {
     dispatch(setPage(1));
-    1;
     dispatch(clearItems());
   }, [locationFilter, dispatch]);
 
@@ -58,7 +57,7 @@ export const CamperList = () => {
     <>
       <div className={scss.catalogWrapper}>
         <CamperBar />
-        {Array.isArray(items) && items.length > 0 && (
+        {Array.isArray(items) && items.length > 0 ? (
           <ul className={scss.listWrapper}>
             {items.map(item => (
               <li className={scss.item} key={item._id}>
@@ -66,11 +65,17 @@ export const CamperList = () => {
               </li>
             ))}
           </ul>
+        ) : (
+          <div className={scss.notFoundWrapper}>
+            <p className={scss.notFound}>
+              No campers found matching the criteria !
+            </p>
+          </div>
         )}
       </div>
 
       <div className={scss.btnWrapper}>
-        {items && hiddenBtn && (
+        {hiddenBtn && (
           <button type="button" className={scss.loadBtn} onClick={loadMore}>
             Load more
           </button>

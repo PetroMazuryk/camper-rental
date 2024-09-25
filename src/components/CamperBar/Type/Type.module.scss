@@ -1,4 +1,4 @@
-.title {
+title {
   font-weight: 600;
   font-size: 20px;
   line-height: 120%;
@@ -31,10 +31,6 @@
   overflow: hidden;
 }
 
-input:checked + .itemLabel {
-  border-color: var(--bg-main-color);
-}
-
 .itemLabel {
   display: flex;
   align-items: center;
@@ -50,6 +46,7 @@ input:checked + .itemLabel {
   border-radius: 10px;
   cursor: pointer;
   padding: 0px 30px;
+  transition: border-color 0.3s ease;
 }
 
 .itemIcon {
@@ -62,4 +59,12 @@ input:checked + .itemLabel {
 .itemIconFill {
   fill: var(--main-text-color);
   stroke: transparent;
+}
+
+input:checked + .itemLabel {
+  border-color: var(--bg-main-color);
+}
+
+.activeLabel {
+  border-color: var(--bg-main-color);
 }

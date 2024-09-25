@@ -45,6 +45,10 @@
   padding: 18px 18px 18px 44px;
 }
 
+.locationInput:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 .locationIcon {
   fill: transparent;
   stroke: var(--main-text-color);

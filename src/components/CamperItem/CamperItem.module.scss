@@ -1,16 +1,4 @@
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 32px;
-  padding: 24px;
-  width: 888px;
-  min-height: 358px;
-}
+
 
 .imageWrapper {
   display: flex;
@@ -162,4 +150,21 @@
     border: 1px solid var(--bg-main-color);
     cursor: pointer;
   }
+}
+
+@media screen and (min-width: 480px) {
+
+  .headingInner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 1200px) {
+
 }

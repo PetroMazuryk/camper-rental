@@ -3,7 +3,6 @@
 }
 
 .item {
-
   border: 1px solid var(--border-color);
   border-radius: 20px;
   margin-left: auto;
@@ -68,14 +67,12 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-
   }
 
   .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap:24px
-   
+    gap: 24px;
   }
 }

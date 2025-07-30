@@ -8,14 +8,13 @@ import ImgE from '../../assets/slider/img-5.jpg';
 
 import { Slider } from '../../components/Slider/Slider';
 import { Footer } from '../../components/Footer/Footer';
-import { Container } from '../../components/Container/Container';
 
 import scss from './Home.module.scss';
 
 const Home = () => {
   const images = [ImgA, ImgB, ImgC, ImgD, ImgE];
   return (
-    <Container>
+    <div>
       <h1 className={scss.homeTitle}>Welcome to the campers shop</h1>
       <h2 className={scss.homeSubtitle}>
         Book the camper from the{' '}
@@ -26,7 +25,7 @@ const Home = () => {
       <Slider images={images} />
 
       <Footer />
-    </Container>
+    </div>
   );
 };
 

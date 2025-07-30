@@ -42,7 +42,7 @@ export const CamperItem = ({ item }) => {
   };
 
   return (
-    <>
+    <div className={scss.camperCard}>
       <div className={scss.imageWrapper}>
         {Array.isArray(gallery) && gallery.length > 0 ? (
           <img className={scss.image} src={gallery[0]} alt={name} />
@@ -162,6 +162,6 @@ export const CamperItem = ({ item }) => {
           <Mavericks item={item} />
         </Modal>
       </div>
-    </>
+    </div>
   );
 };

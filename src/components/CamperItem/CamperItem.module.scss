@@ -1,21 +1,50 @@
+.camperCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border-color);
 
+  @media screen and (min-width: 480px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
 
 .imageWrapper {
-  display: flex;
-  justify-content: center;
-  width: 290px;
-  height: 310px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 290px;
+    height: 310px;
+  }
 }
 
 .image {
-  border-radius: 10px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+
+  @media screen and (max-width: 767px) {
+    height: auto;
+    max-height: 300px;
+  }
 }
 
 .infoWrapper {
-  width: 526px;
-  min-height: 310px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 526px;
+    min-height: 310px;
+  }
 }
 
 .headingInner {
@@ -153,18 +182,14 @@
 }
 
 @media screen and (min-width: 480px) {
-
   .headingInner {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
   }
-
 }
 
 @media screen and (min-width: 768px) {
-
 }
 @media screen and (min-width: 1200px) {
-
 }

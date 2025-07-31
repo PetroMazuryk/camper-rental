@@ -1,15 +1,9 @@
-.catalogWrapper {
-  padding: 10px;
-}
-
 .item {
-  border: 1px solid var(--border-color);
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 32px;
-  padding: 24px;
-  // width: 888px;
+  padding: 14px;
   min-height: 358px;
 }
 
@@ -62,7 +56,7 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 1400px) {
   .catalogWrapper {
     display: flex;
     justify-content: center;

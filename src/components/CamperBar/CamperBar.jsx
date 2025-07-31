@@ -22,7 +22,7 @@ export const CamperBar = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className={scss.container}>
+      <div className={scss.containerBar}>
         <div className={scss.location}>
           <label htmlFor="location">Location</label>
           <div className={scss.placeholder}>

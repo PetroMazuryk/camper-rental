@@ -22,6 +22,11 @@
 
   @media screen and (min-width: 768px) {
     width: 290px;
+    height: 350px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 290px;
     height: 310px;
   }
 }
@@ -42,8 +47,12 @@
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 526px;
+    width: 460px;
     min-height: 310px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 526px;
   }
 }
 

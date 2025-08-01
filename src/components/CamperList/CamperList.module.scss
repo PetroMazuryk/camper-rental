@@ -14,6 +14,7 @@
   justify-content: center;
   border: 1px solid var(--border-color);
   border-radius: 20px;
+  margin: 10px;
 }
 
 .notFound {
@@ -56,7 +57,7 @@
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1440px) {
   .catalogWrapper {
     display: flex;
     justify-content: center;

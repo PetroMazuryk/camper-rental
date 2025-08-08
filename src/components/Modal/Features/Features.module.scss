@@ -3,7 +3,9 @@
   gap: 24px;
 }
 
-.categories {
-  display: flex;
-  gap: 24px;
+@media screen and (min-width: 1440px) {
+  .categories {
+    display: flex;
+    gap: 24px;
+  }
 }

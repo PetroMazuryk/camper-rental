@@ -1,11 +1,19 @@
 .container {
   display: flex;
   gap: 24px;
+  max-width: 100%;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
 }
 
 @media screen and (min-width: 1440px) {
   .categories {
-    display: flex;
-    gap: 24px;
+    flex-direction: row;
   }
 }

@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .categoryItem {
@@ -14,6 +16,8 @@
   background-color: var(--bg-segmented-color);
   border-radius: 100px;
   padding: 12px 16px;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .icon {

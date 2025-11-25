@@ -19,6 +19,10 @@
   left: 50%;
   padding: 32px 32px;
 
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
   @media screen and (min-width: 480px) {
     width: 448px;
     height: 730px;

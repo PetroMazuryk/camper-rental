@@ -1,3 +1,11 @@
+.wrapperFixed {
+  position: sticky;
+  top: 0;
+  background: var(--background-color);
+  z-index: 2;
+  padding-bottom: 16px;
+}
+
 .title {
   margin-bottom: 8px;
   font-weight: 600;
@@ -45,6 +53,7 @@
 .desc {
   line-height: 150%;
   font-size: 14px;
+  padding-right: 24px;
   width: 300px;
   color: var(--second-text-color);
 }
@@ -69,10 +78,11 @@
 
 // scrollBlock
 .scrollBlock {
-  width: 926px;
   padding-right: 24px;
   overflow-y: auto;
-  height: calc(100% - 131px);
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     width: 8px;

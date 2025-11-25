@@ -9,19 +9,25 @@
 }
 
 .modal {
-  position: relative;
-  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 95%;
+  max-width: 982px;
+  height: 90vh;
+
   background-color: var(--background-color);
   border-radius: 20px;
 
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  padding: 32px 32px;
+  display: flex;
+  flex-direction: column;
 
-  max-height: 90vh;
-  overflow-y: auto;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
+
+  padding: 32px;
 
   @media screen and (min-width: 480px) {
     width: 448px;
@@ -38,13 +44,11 @@
 }
 
 .button {
-  position: absolute;
-  top: 40px;
-  right: 15px;
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
   transition: var(--transition);
+  position: sticky;
+  align-self: flex-end;
+  background: transparent;
+  z-index: 2;
 }
 
 .button:hover .icon,

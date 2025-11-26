@@ -63,19 +63,27 @@
 }
 
 .inputContainer {
-  display: flex;
-  align-items: center;
+  position: relative;
+  width: 100%;
   border-radius: 10px;
   padding-right: 18px;
   background-color: var(--bg-input-color);
 }
 
 .inputCalendar {
+  width: 100%;
   height: 56px;
-  max-width: 362px;
+  padding-right: 44px;
+  border-radius: 10px;
+  background-color: var(--bg-input-color);
 }
 
 .iconCalendar {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
   fill: transparent;
   stroke: var(--main-text-color);
 }

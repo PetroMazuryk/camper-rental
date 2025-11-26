@@ -1,5 +1,6 @@
 .form {
-  width: 448px;
+  width: 100%;
+  max-width: 644px;
   padding: 24px;
   border: 1px solid var(--second-text-color);
   border-radius: 10px;
@@ -23,7 +24,8 @@
 }
 
 .inputCommon {
-  width: 400px;
+  width: 100%;
+  max-width: 644px;
   border-radius: 10px;
   padding: 18px;
   background-color: var(--bg-input-color);
@@ -70,7 +72,7 @@
 
 .inputCalendar {
   height: 56px;
-  width: 362px;
+  max-width: 362px;
 }
 
 .iconCalendar {
@@ -85,8 +87,15 @@
 }
 
 :global(.react-datepicker-popper) {
-  left: -34px !important;
-  top: -10px !important;
+  left: 0 !important;
+  top: 4px !important;
+}
+
+@media (max-width: 480px) {
+  :global(.react-datepicker-popper) {
+    left: 0 !important;
+    width: 100%;
+  }
 }
 
 .calendarStyles:global(.react-datepicker) {

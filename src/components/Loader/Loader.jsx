@@ -3,7 +3,7 @@ import scss from './Loader.module.scss';
 
 export const Loader = () => {
   return (
-    <div>
+    <div className={scss.wrapper}>
       <SiReactos className={scss.loader} size={50} color="aqua" />
     </div>
   );

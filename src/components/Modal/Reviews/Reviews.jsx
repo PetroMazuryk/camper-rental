@@ -48,7 +48,9 @@ export const Reviews = ({ item }) => {
           <h3 className={scss.text}>We have no reviews for this camper</h3>
         )}
       </div>
-      <BookingForm />
+      <div className={scss.bookingWrapper}>
+        <BookingForm />
+      </div>
     </div>
   );
 };

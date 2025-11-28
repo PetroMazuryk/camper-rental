@@ -1,10 +1,17 @@
 .reviewContainer {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 32px;
 }
-.reviewsWrapper {
-  display: flex;
-  gap: 24px;
+
+.reviewsWrapper,
+.bookingWrapper {
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 16px;
+
+  box-sizing: border-box;
 }
 
 .list {
@@ -12,12 +19,14 @@
   flex-direction: column;
   gap: 24px;
   list-style-type: none;
-  width: calc((902px - 24px) / 2);
+  width: 100%;
 }
+
 .item {
   list-style-type: none;
   margin-bottom: 20px;
 }
+
 .author {
   margin-bottom: 4px;
   font-weight: 600;
@@ -37,6 +46,7 @@
   line-height: 150%;
   color: var(--text);
 }
+
 .round {
   border-radius: 60px;
   width: 60px;
@@ -44,6 +54,7 @@
   background: var(--bg-segmented-color);
   position: relative;
 }
+
 .letter {
   font-weight: 600;
   font-size: 24px;
@@ -68,4 +79,30 @@
 
 .starIcon.white {
   fill: var(--bg-segmented-color);
+}
+
+@media (min-width: 768px) {
+  .reviewContainer {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .reviewsWrapper,
+  .bookingWrapper {
+    flex: 1 1 0;
+
+    min-width: 0;
+    padding: 16px;
+
+    box-sizing: border-box;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .bookingWrapper > * {
+    width: 100%;
+  }
 }
